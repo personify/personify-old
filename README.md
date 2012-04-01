@@ -32,13 +32,13 @@ Bouncer:
 
     createUser:      
       in: 
-        user: @User
+        user: User
       sideFX: 
         @create user
 
     login:
       in: 
-        user: @User
+        user: User
       out:
         user: @find user 
           
