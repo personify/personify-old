@@ -13,7 +13,7 @@ The Agent:
 
 ```coffeescript
 
-#~/apps/Bouncer/Bouncer.contract.coffee
+#./examples/Bouncer/Bouncer.contract.coffee
 
 Bouncer:
 
@@ -41,26 +41,38 @@ Bouncer:
       out:
         user: -> @find user or @error "User not found"
         
+  client:    
+    default: 'login'
+
 ```
 
+./examples/Bouncer/_ui/login.jade
 ```coffeescript
 
-  client:
-    
-    default:
-      login:
-        'vbox.center':
-          1: User.user
-          2: User.password 
-          3: @button onClick: -> Bouncer.login User
-          4: @errors
-          5: "Not a member? " + @link 'Sign up!', onClick: -> @changeViewTo 'signup'
- 
-    signup:
-      'vbox.center':
-        1: User
-        2: @button onClick -> Bouncer.createUser User
-          
+#login.vbox.center
+
+  input @User.user
+  input @User.password 
+
+  button login @click -> Bouncer.login @User
+   
+  #errors
+
+  Not a member?  
+    a(href=#) Sign up! @click -> @changeViewTo 'signup'
+
+```
+
+./examples/Bouncer/_ui/signup.jade
+```jade
+
+#signup.vbox.center
+
+    @crud @User
+    button @onClick -> Bouncer.createUser @User
+
+    #errors          
+
 ```
 
 
