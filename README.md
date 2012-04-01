@@ -2,14 +2,13 @@
 
 Goal-Oriented Agents with Contracts
 
-Personify allows you to model software modules as Agents: autonomous, goal-oriented (telegoic) Monads.
-Agents use Contracts to declare and enforce their behavior both at design-time and at runtime.
-Changes to Contracts can result in the generation of Agent artifacts such as services and models or even a Statement of Work
+Personify allows you to model software modules as Agents: autonomous, goal-oriented [http://en.wikipedia.org/wiki/Teleology](teleological) [http://en.wikipedia.org/wiki/Monad_(functional_programming)](Monads).
+Agents use [http://en.wikipedia.org/wiki/Design_by_contract](Contracts) to declare and enforce their behavior both at design-time and at runtime.
+Changes to Contracts can result in side effects such as the generation or modification of Agent artifacts (services, actors and models) or a Statement of Work, for example.
 
 Let's create a simple login system:
 
 The Agent:
-
 
 ```coffeescript
 
@@ -52,8 +51,8 @@ Bouncer:
 
 #login.vbox.center
 
-  input @User.user
-  input @User.password 
+  input.text @User.user
+  input.text @User.password 
 
   button login @click -> Bouncer.login @User
    
