@@ -13,7 +13,7 @@ The Agent:
 
 ```coffeescript
 
-~/apps/Bouncer/Bouncer.contract.coffee
+#~/apps/Bouncer/Bouncer.contract.coffee
 
 
 Bouncer:
@@ -23,10 +23,10 @@ Bouncer:
   actors:  
 
     User:
-      name: @string
-      user: @email 
-      password: @password.atleast 5 
-      session: @string
+      name: string
+      user: email 
+      password: password.atleast 5 
+      session: string
 
   services:    
 
