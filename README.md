@@ -47,7 +47,7 @@ Bouncer:
 ```
 
 ./examples/Bouncer/_ui/login.jade
-```HTML
+```coffeescript
 
 #login.vbox.center
 
@@ -64,7 +64,7 @@ Bouncer:
 ```
 
 ./examples/Bouncer/_ui/signup.jade
-```HTML
+```coffeescript
 
 #signup.vbox.center
 
