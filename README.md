@@ -2,7 +2,7 @@
 
 Goal-Driven Agents with Contracts
 
-Personify allows you to model software modules as Agents: autonomous, goal-oriented ([teleological](http://en.wikipedia.org/wiki/Teleology)) [Monads](http://en.wikipedia.org/wiki/Monad_(functional_programming)).
+Personify allows you to model software modules as Agents: autonomous, goal-oriented ([teleological](http://en.wikipedia.org/wiki/Teleology)) [Monads](http://en.wikipedia.org/wiki/Monad_(functional_programming).
 Agents use [Contracts](http://en.wikipedia.org/wiki/Design_by_contract) to declare and enforce their behavior both at design-time and at runtime.  Changes to Contracts can result in side effects such as the generation or modification of Agent artifacts (services, actors and models) or a Statement of Work, for example.
 
 Agents use a module system with a design inspired by [Domain-driven design](http://en.wikipedia.org/wiki/Domain-driven_design) and [Clean Code](http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882) and are recursive, that is, an Agent can be composed of an arbitrary number of sub-Agents. For a demo, let's create a simple login system: **Bouncer**
@@ -31,7 +31,6 @@ User:
   user: @email 
   password: @password.atleast 10
   session: @string
-
 ```
 
 *./examples/Bouncer/_services/createUser.contract.coffee*
