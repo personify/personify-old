@@ -65,7 +65,8 @@ Bouncer:
 ```
 
 ./examples/Bouncer/_ui/signup.jade
-```coffeescript
+
+```HTML
 
 #signup.vbox.center
 
