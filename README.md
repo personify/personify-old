@@ -6,18 +6,19 @@ Personify enables you to model software modules as Agents: autonomous, goal-orie
 Agents use [Contracts](http://en.wikipedia.org/wiki/Design_by_contract) to declare and enforce their behavior both at design-time and at runtime.  Changes to Contracts can result in side effects such as the generation or modification of Agent artifacts (services, actors and models) or a Statement of Work, for example.
 
 Agents have only a small number of artifacts:
-* actors - the proper nouns of your system - important actors or roles
-* services - the verbs of of your user stories - immutable transformation steps
+
+* actors - the proper nouns of your system- important actors or roles
+* services - the verbs of of your user stories- immutable transformation steps
 * models - the nouns of your system 
 
 Agents use a module system with a design inspired by [Domain-driven design](http://en.wikipedia.org/wiki/Domain-driven_design) and [Clean Code](http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882). Agents (modules) are [fractal](http://erg4146.casaccia.enea.it/wwwerg26701/gad-pe02.htm), that is, an Agent can be composed of an arbitrary number of sub-Agents (which could be considered as the Agent's genetic code). For more in-depth theory check out the [masterclass](https://github.com/personify/personify-masterclass) or the [whitepaper](https://github.com/personify/personify-whitepaper).  Example Agents can be found in [examples](https://github.com/personify/Personify/tree/master/examples). 
 
 For a demo, let's create a simple login system: **Bouncer**
+
 We start by launching the Personify REPL:
 
 ```
 me@./examples$ personify 
-
 > new agent Bouncer
 > cd Bouncer
 Bouncer> ls
@@ -50,7 +51,6 @@ if we now run 'build' on the Personify REPL:
 
 ```
 Bouncer> build
-
   building Bouncer Agent
   actors: User
   services: signup, login
@@ -103,6 +103,7 @@ ui widgets:
 
 ```HTML
 
+
 #login.vbox.center
 
   #errors
@@ -114,11 +115,13 @@ ui widgets:
    
   Not a member?  
     a(href=#) Sign up! @click -> @changeViewTo 'signup'
+
 ```
 
 *./examples/Bouncer/_ui/signup.jade*
 
 ```HTML
+
 
 #signup.vbox.center
 
@@ -126,6 +129,7 @@ ui widgets:
 
     @crud @User
     button @onClick -> Bouncer.signup @User
+
 ```
 
 
