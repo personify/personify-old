@@ -64,12 +64,24 @@ Personify will scaffold out Bouncer's artifacts based on the contract which we c
 ```coffeescript
 
 # User of an application
-
 User:
   name: @string
   user: @email 
   password: @password.atleast 10
   session: @string
+
+sample:
+  good:
+    name: "Stephen Strange"
+    user: "drstrange"
+    password: 
+    
+```
+
+```coffeescript
+
+#
+
 ```
 
 *./examples/Bouncer/_services/signup.contract.coffee*
