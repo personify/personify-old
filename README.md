@@ -7,9 +7,9 @@ Agents use [Contracts](http://en.wikipedia.org/wiki/Design_by_contract) to decla
 
 Agents have only a small number of artifacts:
 
-* actors - the proper nouns of your system- important actors or roles
-* services - the verbs of of your user stories- immutable transformation steps
-* models - the nouns of your system 
+1. actors - the proper nouns of your system- important actors or roles
+2. services - the verbs of of your user stories- immutable transformation steps
+3. models - the nouns of your system 
 
 Agents use a module system with a design inspired by [Domain-driven design](http://en.wikipedia.org/wiki/Domain-driven_design) and [Clean Code](http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882). Agents (modules) are [fractal](http://erg4146.casaccia.enea.it/wwwerg26701/gad-pe02.htm), that is, an Agent can be composed of an arbitrary number of sub-Agents (which could be considered as the Agent's genetic code). For more in-depth theory check out the [masterclass](https://github.com/personify/personify-masterclass) or the [whitepaper](https://github.com/personify/personify-whitepaper).  Example Agents can be found in [examples](https://github.com/personify/Personify/tree/master/examples). 
 
