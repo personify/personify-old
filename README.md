@@ -57,7 +57,7 @@ Bouncer> build
   ui: signup, login
 ```
 
-Personify will scaffold out Bouncer's artifacts based on the contract:
+Personify will scaffold out Bouncer's artifacts based on the contract which we can now flesh-out:
 
 *./examples/Bouncer/_actors/User.contract.coffee*
 
