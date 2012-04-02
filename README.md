@@ -13,7 +13,7 @@ Agents have only a small number of artifacts:
 
 Agents use a module system with a design inspired by [Domain-driven design](http://en.wikipedia.org/wiki/Domain-driven_design) and [Clean Code](http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882). Agents (modules) are [fractal](http://erg4146.casaccia.enea.it/wwwerg26701/gad-pe02.htm), that is, an Agent can be composed of an arbitrary number of sub-Agents (which could be considered as the Agent's genetic code). For more in-depth theory check out the [masterclass](https://github.com/personify/personify-masterclass) or the [whitepaper](https://github.com/personify/personify-whitepaper).  Example Agents can be found in [examples](https://github.com/personify/Personify/tree/master/examples). 
 
-For a demo, let's create a simple login system: **[Bouncer]**(https://github.com/personify/Personify/tree/master/examples/Bouncer)
+For a demo, let's create a simple login system: [Bouncer](https://github.com/personify/Personify/tree/master/examples/Bouncer)
 
 We start by launching the Personify REPL:
 
