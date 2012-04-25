@@ -5,14 +5,13 @@
 # scaffold from the top down, build from the bottom up
 
 agent: 'Personify'
-persona: 'Fiona'
 goal: "build Personify projects"
 
 services:
-  newAgent: "create a new module and contract"
-  test:  "run all specs for agent"
-  build: "build project based on contract and build config"
-  watch: "have agent watch itself for changes"
+  create: "create a new module and contract"
+  test:   "run all specs for agent"
+  build:  "build project based on contract and build config"
+  watch:  "have agent watch itself for changes"
 
 
 

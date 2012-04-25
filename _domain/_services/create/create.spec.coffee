@@ -1,57 +1,14 @@
-require 'should'
-path = require 'path'
+spec:
+  service: 'create'
+  in:
+    fsPath : @FSPath
+    name: @String
 
-report = (type, str) -> console.log type+":"+str
-log = (str) -> console.log str
+  sideFX: "create module on FileSystem"
 
-step = (str, func) ->   
-  try
-    func()
-    report 'step', str
-  catch err
-    console.log "ERR: ", err
-
-spec = ({service, desc, steps}) -> 
-  report 'title', "#{service}: #{desc}"
-  steps()
-  #step str, func for str, func of steps
-
-
-####
-
-sh = require 'shelljs'
-
-createModule = ({fsPath, name}, next) -> 
-
-  #sideFX: create module on FileSystem
-
-  modulePath = path.join fsPath, name 
-  if !path.existsSync modulePath then sh.mkdir '-p', modulePath #!
-  else log 'path already exists: ' + modulePath
-
-  next?()
-
-####
-
-series = (steps) -> 
-  #console.log typeof step, func for step, func of steps
-  for step, func of steps
-    console.log step
-    #async .add 
-  #run
-
-####
-
-service: 'createModule'
-in:
-  fsPath : @FSPath
-  name: @String
-
-sideFX: "create module on FileSystem"
-
-spec: 
-  "can create a module dir on FileSystem"
-  "error on duplicate module dir creation"
+  spec: 
+    "can create a module dir on FileSystem"
+    "error on duplicate module dir creation"
 
 
 
