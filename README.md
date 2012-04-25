@@ -74,7 +74,7 @@ sample:
   good:
     name: "Stephen Strange"
     user: "drstrange"
-    password: 
+    password: "dsdsdsdsdsdsd"
     
 ```
 
