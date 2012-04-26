@@ -1,13 +1,39 @@
-watch: spec: "watch an agent for changes":
+ee = require('events').EventEmitter
+sh = 
+  exec: (cmd) -> @agent.emit 'create'
 
-  given: "a sample agent": -> sample 'agent'
+mock = (what) ->
+  obj = new ee()
+  obj.watch = ->
+  return obj
 
-  and: "the agent is watching", -> 
-    @agent.watch target: @agent.target 
+spec = ({service, can}) -> 
+  console.log service
+  console.log feature for feature, steps of can
+  for step, func of steps
+    try
+      func -> report step
+    catch e
+      console.log e  
 
-  then: "the agent should detect file creation", -> 
-    @agent.on 'create', -> @pass 'file creation detected'
+spec
+  service: "watch"
+  can: "watch an Agent for changes":
 
-when: "a file is created" ->
-  exec "echo 'hi!' >> hello.txt"  
-  
+    "1. Given a mock agent": ->
+
+      @agent = mock 'Agent'
+   
+    "2. And the agent is watching": (agent) ->
+    
+      @agent.watch() #!
+
+    "3. Then the agent should detect file creation": (agent) ->
+
+      @agent.on 'create', -> path.existsSync('./hi.txt').should.be.true 
+
+    "4. When a file is created": ->
+
+      sh.exec "echo 'hi' >> ./hi.txt" #!
+
+   cleanup: -> sh.rm "./hi.txt"

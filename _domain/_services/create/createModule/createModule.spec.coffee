@@ -4,21 +4,14 @@ path = require 'path'
 report = (type, str) -> console.log type+":"+str
 log = (str) -> console.log str
 
-step = (str, func) ->   
-  try
-    func()
-    report 'step', str
-  catch err
-    console.log "ERR: ", err
-
-
-
 spec = ({service, can, error, cleanup}) -> 
   
   if can?
     report 'service', service
     report 'feature', feature for feature, steps of can
+
     step str, func for str, func of steps
+
     cleanup?()
   
 
@@ -33,26 +26,48 @@ series = (steps) ->
 
 ###
 
-# will be auto DI'd at runtime
 createModule = require './createModule'
-sh = require 'shelljs'
+scratch = path.join __dirname, "_scratch"
 
-spec 
+spec
   service: 'createModule'
-  can: "create a module dir on a FileSystem":
+  can: "create a module dir on a FileSystem": ->
+ 
+    series
 
-    "When a module is created": ->
-   
-      createModule #!
-        fsPath: path.join __dirname, "_scratch"
-        name: "TestAgent"
-    
-    "Then a folder should exist": ->
+      "1. When a module is created": ->
+     
+        createModule #!
+          fsPath: scratch
+          name: "TestAgent"
+      
+      "2. Then fsPath/name should exist": ->
 
-      path.existsSync(path.join __dirname, "_scratch/TestAgent")
-      .should.be.true
+        path.existsSync(path.join scratch, "TestAgent")
+        .should.be.true
 
-  #cleanup: -> sh.rmdir path.join __dirname, "_scratch/TestAgent"
+  cleanup: -> 
+
+    sh = require 'shelljs'
+    sh.rmdir path.join scratch, "TestAgent"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

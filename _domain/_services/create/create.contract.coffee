@@ -5,4 +5,4 @@ service: create:
     type: 'agent', 'job', Agent
     name: String
 
-  sideFX: "series createModule, createContract"
+  sideFX: "run createModule, createContract in series"
